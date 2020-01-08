@@ -57,19 +57,18 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' .zshrc
 sed -i 's/# ENABLE_CORRECTION/ENABLE_CORRECTION/g' .zshrc
 sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/g' .zshrc
-chsh -s $(which zsh)
 zsh
 chsh -s $(which zsh)
-echo "Done."
-
-# Create tools folder in ~/
-echo "Creating tools folder ..."
-mkdir ~/tools
 echo "Done."
 
 # Setup Aliases ~/
 echo "Setup Aliases ..."
 echo 'alias webserver="python3 -m http.server 443"' >> ~/.zshrc
+echo "Done."
+
+# Create tools folder in ~/
+echo "Creating tools folder ..."
+mkdir ~/tools
 echo "Done."
 
 # Install Go
@@ -174,6 +173,8 @@ cd ~/tools/
 echo "Done."
 
 cd ~/
+rm -rf SRB/
+
 echo -e "\n\n\nDone! All tools are set up in ~/tools\n\n\n"
 
 

@@ -4,26 +4,26 @@ SRB Tools is a script to install tools I use while looking for vulnerabilities i
 
 # Unix Shell
 
-- Z-Shell Oh My Zsh
+- Z-Shell
 - Oh My Zsh
  
 # Tools
 
-- Aquatone
-- Chromium (required for Aquatone)
-- crtndstry
-- Dirsearch
-- ffuf
-- Gobuster
-- httprobe
-- JSParser
-- knock.py
-- Massdns
-- nmap
-- Seclists collection
-- Sqlmap-dev
-- WPScan
-- XSStrike
+- Aquatone
+- Chromium (required for Aquatone)
+- crtndstry
+- Dirsearch
+- ffuf
+- Gobuster
+- httprobe
+- JSParser
+- knock.py
+- Massdns
+- nmap
+- Seclists collection
+- Sqlmap-dev
+- WPScan
+- XSStrike
 
 Optional:
 - DNS Bind Server for Out-of-Band testing (Hostname and IP required)

@@ -14,7 +14,7 @@ GO_VERSION="go1.13.5.linux-amd64.tar.gz"
 # Setup script
 echo "------------------------------------------\n\n"
 echo "Hello, $USER. Let's configure this system.\n\n"
-echo "-------- configureServer.sh v0.1 ---------\n"
+echo "-------- SRB ----- setup.sh v0.2 ---------\n"
 
 # Setup firewall
 echo "Setup firewall ..."
@@ -28,28 +28,29 @@ echo "Done."
 
 # Update system
 echo "Updating System ..."
-sudo apt-get update;
-sudo apt-get upgrade -y;
-sudo apt-get dist-upgrade -y;
+sudo apt update;
+sudo apt upgrade -y
+sudo apt dist-upgrade -y
 echo "Done."
 
 # Clean system
 echo "Clean up System ..."
-sudo apt-get autoremove -y;
-sudo apt-get autoclean -y;
-sudo updatedb;
+sudo apt autoremove -y
+sudo apt autoclean -y
+sudo updatedb
 echo "Done."
 
 # Install dependencies
 echo "Installing dependencies ..."
-sudo apt-get install build-essential -y
-sudo apt-get install jq -y
-#sudo apt-get install -y git
+sudo apt install -y build-essential
+sudo apt install -y jq
+sudo apt install -y git
+sudo apt install curl libcurl4-openssl-dev make zlib1g-dev gawk g++ gcc libreadline6-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake libtool bison pkg-config ruby ruby-bundler ruby-dev -y
 echo "Done."
 
 echo "Installing Z-Shell (Oh My Zsh) ..."
 sudo apt install zsh -y
-sudo apt-get install powerline fonts-powerline -y
+sudo apt install powerline fonts-powerline -y
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -74,7 +75,7 @@ echo "Done."
 # Install Go
 echo "Installing Golang ..."
 wget "https://dl.google.com/go/$GO_VERSION"
-sudo tar -xvf $GO_VERSION
+tar -xvf $GO_VERSION
 sudo mv go /usr/local
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -146,6 +147,7 @@ echo "Done."
 # Install httprobe
 echo "Installing httprobe ..."
 go get -u github.com/tomnomnom/httprobe 
+cd ~/tools/
 echo "Done."
 
 # Install XSStrike
@@ -158,6 +160,15 @@ echo "Installing JSParser .."
 git clone https://github.com/nahamsec/JSParser.git
 cd JSParser*
 sudo python setup.py install
+cd ~/tools/
+echo "Done."
+
+# Install WPScan
+echo "Installing wpscan ..."
+git clone https://github.com/wpscanteam/wpscan.git
+cd wpscan/
+sudo gem install wpscan
+wpscan --update
 cd ~/tools/
 echo "Done."
 
@@ -178,7 +189,7 @@ select opt in "${options[@]}"; do
                 yes)
                         git clone https://github.com/JuxhinDB/OOB-Server.git
                         cd OOB-Server
-                        echo "Enter your domain-name: "
+                        echo "Enter your hostname: "
                         read domain
                         echo "Enter your server IP: "
                         read ip
@@ -201,7 +212,3 @@ cd ~/
 rm -rf SRB/
 
 echo -e "\n\n\nDone! All tools are set up in ~/tools\n\n\n"
-
-
-
-

@@ -14,7 +14,7 @@ GO_VERSION="go1.13.5.linux-amd64.tar.gz"
 # Setup script
 echo "------------------------------------------\n\n"
 echo "Hello, $USER. Let's configure this system.\n\n"
-echo "-------- SRB ----- setup.sh v0.2 ---------\n"
+echo "-------- SRB ----- setup.sh v0.3 ---------\n"
 
 # Setup firewall
 echo "Setup firewall ..."
@@ -45,6 +45,7 @@ echo "Installing dependencies ..."
 sudo apt install -y build-essential
 sudo apt install -y jq
 sudo apt install -y git
+sudo apt install -y nmap
 sudo apt install curl libcurl4-openssl-dev make zlib1g-dev gawk g++ gcc libreadline6-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake libtool bison pkg-config ruby ruby-bundler ruby-dev -y
 echo "Done."
 

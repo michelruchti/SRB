@@ -1,23 +1,29 @@
 # SRB - Setup Recon Box
 
 SRB Tools is a script to install tools I use while looking for vulnerabilities in CTF challenges and bug bounty programs.
+
+# Unix Shell
+
+- Z-Shell Oh My Zsh
+- Oh My Zsh
  
 # Tools
 
-- crtndstry
-- Massdns
-- Aquatone
-- Chromium (required for Aquatone)
-- Dirsearch
-- Ffuf
-- Gobuster
-- Sqlmap-dev
-- knock.py
-- httprobe
-- XSStrike
-- JSParser
-- WPScan
-- Seclists collection
+- Aquatone
+- Chromium (required for Aquatone)
+- crtndstry
+- Dirsearch
+- ffuf
+- Gobuster
+- httprobe
+- JSParser
+- knock.py
+- Massdns
+- nmap
+- Seclists collection
+- Sqlmap-dev
+- WPScan
+- XSStrike
 
 Optional:
 - DNS Bind Server for Out-of-Band testing (Hostname and IP required)

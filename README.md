@@ -32,4 +32,4 @@ Optional:
 - git clone https://github.com/michelruchti/SRB
 - cd SRB
 - chmod +x setup.sh
-- ./setup.sh
+- sudo ./setup.sh

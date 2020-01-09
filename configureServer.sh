@@ -72,31 +72,19 @@ mkdir ~/tools
 echo "Done."
 
 # Install Go
-select choice in "${choices[@]}"; do
-        case $choice in
-                yes)
-                        echo "Installing Golang"
-                        wget "https://dl.google.com/go/$GO_VERSION"
-                        sudo tar -xvf $GO_VERSION
-                        sudo mv go /usr/local
-                        export GOROOT=/usr/local/go
-                        export GOPATH=$HOME/go
-                        export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-                        echo 'export GOROOT=/usr/local/go' >> ~/.zshrc
-                        echo 'export GOPATH=$HOME/go'   >> ~/.zshrc
-                        echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.zshrc
-                        rm $GO_VERSION
-                        source ~/.zshrc
-                        sleep 1
-                        break
-                        ;;
-                no)
-                        echo "Please install go and rerun this script"
-                        echo "Aborting installation..."
-                        exit 1
-                        ;;
-        esac
-done
+echo "Installing Golang ..."
+wget "https://dl.google.com/go/$GO_VERSION"
+sudo tar -xvf $GO_VERSION
+sudo mv go /usr/local
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+echo 'export GOROOT=/usr/local/go' >> ~/.zshrc
+echo 'export GOPATH=$HOME/go'   >> ~/.zshrc
+echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.zshrc
+rm $GO_VERSION
+source ~/.zshrc
+echo "Done."
 
 # Installing tools
 cd ~/tools/
@@ -135,6 +123,16 @@ echo "Installing dirsearch ..."
 git clone https://github.com/maurosoria/dirsearch.git
 echo "Done."
 
+# Install ffuf
+echo "Installing ffuf ..."
+go get github.com/ffuf/ffuf
+echo "Done."
+
+# Install Gobuster
+echo "Installing Gobuster ..."
+go get github.com/OJ/gobuster
+echo "Done."
+
 # Install sqlmap
 echo "Installing sqlmap ..."
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
@@ -171,6 +169,33 @@ cd ~/tools/SecLists/Discovery/DNS/
 cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
 cd ~/tools/
 echo "Done."
+
+echo "Would you like to install DNS Bind Server for Out-of-Band testing?"
+PS1="Please select an option : "
+options=("yes" "no")
+select opt in "${options[@]}"; do
+        case $opt in
+                yes)
+                        git clone https://github.com/JuxhinDB/OOB-Server.git
+                        cd OOB-Server
+                        echo "Enter your domain-name: "
+                        read domain
+                        echo "Enter your server IP: "
+                        read ip
+                        setup $domain $ip
+                        cd ~/tools/
+                        rm -rf OOB-Server/
+                        sudo ufw allow 53
+                        echo "OOB DNS Bind Server installed."
+                        break
+                        ;;
+                no)
+                        echo "Ok."
+                        break
+                        ;;
+                *)      echo "invalid option $REPLY";;
+        esac
+done
 
 cd ~/
 rm -rf SRB/

@@ -46,6 +46,7 @@ sudo apt install -y build-essential
 sudo apt install -y jq
 sudo apt install -y git
 sudo apt install -y nmap
+sudo apt-get install httpie -y
 sudo apt install curl libcurl4-openssl-dev make zlib1g-dev gawk g++ gcc libreadline6-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake libtool bison pkg-config ruby ruby-bundler ruby-dev -y
 echo "Done."
 
@@ -96,11 +97,19 @@ echo "Installing crtndstry"
 git clone https://github.com/nahamsec/crtndstry.git
 echo "Done."
 
+# Install sublist3r
+echo "Installing sublist3r"
+git clone https://github.com/aboul3la/Sublist3r.git
+cd Sublist3r
+sudo pip3 install -r requirements.txt
+cd ~/tools/
+echo "Done."
+
 # Install Amass
-#echo "Installing Amass"
-#export GO111MODULE=on
-#go get -v -u github.com/OWASP/Amass/v3
-#echo "Done."
+echo "Installing Amass"
+export GO111MODULE=on
+go get -u github.com/OWASP/Amass/...
+echo "Done."
 
 echo "installing massdns"
 git clone https://github.com/blechschmidt/massdns.git

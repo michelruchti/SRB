@@ -9,6 +9,7 @@ SRB Tools is a script to install tools I use while looking for vulnerabilities i
  
 # Tools
 
+- Amass
 - Aquatone
 - Chromium (required for Aquatone)
 - crtndstry
@@ -22,6 +23,7 @@ SRB Tools is a script to install tools I use while looking for vulnerabilities i
 - nmap
 - Seclists collection
 - Sqlmap-dev
+- Sublist3r
 - WPScan
 - XSStrike
 

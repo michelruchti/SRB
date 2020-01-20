@@ -116,15 +116,20 @@ go get -v -u github.com/OWASP/Amass/v3/...
 echo "Done."
 
 echo "installing massdns"
+cd ~/tools/
 git clone https://github.com/blechschmidt/massdns.git
 cd ~/tools/massdns
 make
-cd ~/tools/
+sudo mv bin/massdns /bin
 echo "done"
 
 # Install Aquatone
+cd ~/
 echo "Installing aquatone ..."
-go get github.com/michenriksen/aquatone
+wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
+unzip aquatone_linux_amd64_1.7.0.zip
+sudo mv aquatone /bin
+rm aquatone_linux_amd64_1.7.0.zip LICENSE.txt README.md
 echo "Done."
 
 # Install Chromium

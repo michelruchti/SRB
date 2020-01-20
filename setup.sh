@@ -50,6 +50,7 @@ sudo apt install -y python-setuptools
 sudo apt install -y jq
 sudo apt install -y git
 sudo apt install -y nmap
+sudo apt install -y chromium-browser
 sudo apt-get install httpie -y
 sudo apt install curl libcurl4-openssl-dev make zlib1g-dev gawk g++ gcc libreadline6-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake libtool bison pkg-config ruby ruby-bundler ruby-dev -y
 echo "Done."
@@ -131,12 +132,6 @@ wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_
 unzip aquatone_linux_amd64_1.7.0.zip
 sudo mv aquatone /bin
 rm aquatone_linux_amd64_1.7.0.zip LICENSE.txt README.md
-echo "Done."
-
-# Install Chromium
-echo "Installing chromium ..."
-sudo snap install chromium
-sudo cp /snap/bin/* /usr/bin
 echo "Done."
 
 # Install Dirsearch

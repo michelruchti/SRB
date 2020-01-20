@@ -94,7 +94,6 @@ echo 'export GOPATH=$HOME/go'   >> ~/.zshrc
 echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.zshrc
 rm $GO_VERSION
 zsh
-source ~/.zshrc
 echo "Done."
 
 # Install crtndstry

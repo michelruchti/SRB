@@ -80,6 +80,7 @@ echo "Done."
 
 # Install Go
 echo "Installing Golang ..."
+cd ~/
 wget "https://dl.google.com/go/$GO_VERSION"
 tar -xvf $GO_VERSION
 sudo mv go /usr/local
@@ -90,6 +91,7 @@ echo 'export GOROOT=/usr/local/go' >> ~/.zshrc
 echo 'export GOPATH=$HOME/go'   >> ~/.zshrc
 echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.zshrc
 rm $GO_VERSION
+zsh
 source ~/.zshrc
 echo "Done."
 

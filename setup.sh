@@ -45,7 +45,8 @@ echo "Done."
 # Install dependencies
 echo "Installing dependencies ..."
 sudo apt install -y build-essential
- sudo apt install -y python3-pip
+sudo apt install -y python3-pip
+sudo apt install -y python-setuptools
 sudo apt install -y jq
 sudo apt install -y git
 sudo apt install -y nmap
@@ -92,10 +93,8 @@ rm $GO_VERSION
 source ~/.zshrc
 echo "Done."
 
-# Installing tools
-cd ~/tools/
-
 # Install crtndstry
+cd ~/tools/
 echo "Installing crtndstry"
 git clone https://github.com/nahamsec/crtndstry.git
 echo "Done."
@@ -139,65 +138,71 @@ sudo cp /snap/bin/* /usr/bin
 echo "Done."
 
 # Install Dirsearch
+cd ~/tools/
 echo "Installing dirsearch ..."
 git clone https://github.com/maurosoria/dirsearch.git
 echo "Done."
 
 # Install ffuf
+cd ~/
 echo "Installing ffuf ..."
 go get github.com/ffuf/ffuf
 echo "Done."
 
 # Install Gobuster
+cd ~/
 echo "Installing Gobuster ..."
 go get github.com/OJ/gobuster
 echo "Done."
 
 # Install sqlmap
 echo "Installing sqlmap ..."
+cd ~/tools
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
 echo "Done."
 
 # Install knock.py
-echo "Installing knock.py ..."
-git clone https://github.com/guelfoweb/knock.git
-echo "Done."
+# echo "Installing knock.py ..."
+# cd ~/tools
+# git clone https://github.com/guelfoweb/knock.git
+# echo "Done."
 
 # Install httprobe
 echo "Installing httprobe ..."
+cd ~/
 go get -u github.com/tomnomnom/httprobe 
-cd ~/tools/
 echo "Done."
 
 # Install XSStrike
 echo "Installing XSStrike .."
+cd ~/tools/
 git clone https://github.com/s0md3v/XSStrike.git
 echo "Done."
 
 # Install JSParser
-echo "Installing JSParser .."
-git clone https://github.com/nahamsec/JSParser.git
-cd JSParser*
-sudo python setup.py install
-cd ~/tools/
-echo "Done."
+# echo "Installing JSParser .."
+# cd ~/tools/
+# git clone https://github.com/nahamsec/JSParser.git
+# cd JSParser
+# python setup.py install
+# echo "Done."
 
 # Install WPScan
 echo "Installing wpscan ..."
+cd ~/tools/
 git clone https://github.com/wpscanteam/wpscan.git
 cd wpscan/
 sudo gem install wpscan
 wpscan --update
-cd ~/tools/
 echo "Done."
 
 # Get Seclists
 echo "Downloading Seclists"
+cd ~/tools/
 git clone https://github.com/danielmiessler/SecLists.git
 cd ~/tools/SecLists/Discovery/DNS/
 ##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
 cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
-cd ~/tools/
 echo "Done."
 
 # Optional: Install DNS Bind Server

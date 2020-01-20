@@ -110,8 +110,9 @@ echo "Done."
 
 # Install Amass
 echo "Installing Amass"
+cd ~/
 export GO111MODULE=on
-go get -u github.com/OWASP/Amass/...
+go get -v -u github.com/OWASP/Amass/v3/...
 echo "Done."
 
 echo "installing massdns"

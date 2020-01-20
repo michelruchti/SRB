@@ -16,7 +16,8 @@ GO_VERSION="go1.13.5.linux-amd64.tar.gz"
 # Setup script
 echo "------------------------------------------\n\n"
 echo "Hello, $USER. Let's configure this system.\n\n"
-echo "-------- SRB ----- setup.sh v0.3 ---------\n"
+echo "-------- SRB ----- setup.sh v1.0 ---------\n"
+sleep 5
 
 # Setup firewall
 echo "Setup firewall ..."

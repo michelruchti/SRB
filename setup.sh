@@ -8,6 +8,8 @@
 # Enable public key login 
 # Disable root login and password auth in /etc/ssh/sshd_config 
 
+sudo -v
+
 # Variables:
 GO_VERSION="go1.13.5.linux-amd64.tar.gz"
 
@@ -191,6 +193,10 @@ cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
 cd ~/tools/
 echo "Done."
 
+# Optional: Install DNS Bind Server
+# DNS configs:
+# A	    ns1.domain.com  ->  157.245.24.77       1800 
+# NS	    x.domain.com    ->  ns1.domain.com      1800
 echo "Would you like to install DNS Bind Server for Out-of-Band testing?"
 PS1="Please select an option : "
 options=("yes" "no")

@@ -14,9 +14,9 @@ sudo -v
 GO_VERSION="go1.13.5.linux-amd64.tar.gz"
 
 # Setup script
-echo "------------------------------------------\n\n"
-echo "Hello, $USER. Let's configure this system.\n\n"
-echo "-------- SRB ----- setup.sh v1.0 ---------\n"
+printf "\n\n------------------------------------------\n"
+printf "Hello, $USER. Let's configure this system.\n"
+printf "-------- SRB ----- setup.sh v1.0 ---------\n\n"
 sleep 5
 
 # Setup firewall
@@ -237,4 +237,4 @@ done
 cd ~/
 rm -rf SRB/
 
-echo -e "\n\n\nDone! All tools are set up in ~/tools\n\n\n"
+printf "\n\n\nDone! All tools are set up in ~/tools\n\n\n"

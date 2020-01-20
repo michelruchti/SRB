@@ -1,6 +1,6 @@
-# SRB - Setup Recon Box
+# SRB - Super Recon Box
 
-SRB Tools is a script to install tools I use while looking for vulnerabilities in CTF challenges and bug bounty programs.
+SRB is a script to install tools I use while looking for vulnerabilities in CTF challenges and bug bounty programs.
 
 # Unix Shell
 
@@ -17,8 +17,6 @@ SRB Tools is a script to install tools I use while looking for vulnerabilities i
 - ffuf
 - Gobuster
 - httprobe
-- JSParser
-- knock.py
 - Massdns
 - nmap
 - Seclists collection

@@ -45,6 +45,7 @@ echo "Done."
 # Install dependencies
 echo "Installing dependencies ..."
 sudo apt install -y build-essential
+ sudo apt install -y python3-pip
 sudo apt install -y jq
 sudo apt install -y git
 sudo apt install -y nmap

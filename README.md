@@ -28,6 +28,13 @@ SRB is a script to install tools I use while looking for vulnerabilities in CTF 
 Optional:
 - DNS Bind Server for Out-of-Band testing (Hostname and IP required)
 
+# IMPORTANT
+Create a new user with sudo privileges:
+adduser username
+usermod -aG sudo username
+Copy ssh key: ssh-copy-id username@x.x.x.x
+Enable public key login 
+
 # Installing
 - git clone https://github.com/michelruchti/SRB
 - cd SRB

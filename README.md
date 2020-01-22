@@ -32,8 +32,11 @@ Optional:
 Create a new user with sudo privileges:
 adduser username
 usermod -aG sudo username
+Enable password login in /etc/ssh/sshd_config
+
+On remote host:
 Copy ssh key: ssh-copy-id username@x.x.x.x
-Enable public key login 
+Disable root and password login in /etc/ssh/sshd_config
 
 # Installing
 - git clone https://github.com/michelruchti/SRB

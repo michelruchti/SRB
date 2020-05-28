@@ -4,7 +4,7 @@ sudo -v
 
 # Variables:
 COLOR="\e[95m" 
-GO_VERSION="go1.13.5.linux-amd64.tar.gz"
+GO_VERSION="go1.14.3.linux-amd64.tar.gz"
 AQUATONE_VERSION="aquatone_linux_amd64_1.7.0.zip"
 
 # Setup script
@@ -37,22 +37,10 @@ sudo apt install -y jq
 sudo apt install -y git
 sudo apt install -y httpie
 
-# ZSH & Oh My Zsh
-echo -e "${COLOR}[*] Installing Z-Shell (Oh My Zsh)"
-sudo apt install -y zsh
-sudo apt install -y powerline fonts-powerline
-git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
-sed -i 's/# ENABLE_CORRECTION/ENABLE_CORRECTION/g' ~/.zshrc
-sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/g' ~/.zshrc
-zsh
-sudo chsh -s $(which zsh)
 
 # Setup Aliases ~/
 echo -e "${COLOR}[*] Setup Aliases"
-echo 'alias webserver="python3 -m http.server 443"' >> ~/.zshrc
+echo 'alias webserver="python3 -m http.server 443"' >> ~/.bashrc
 
 # Create tools folder in ~/
 echo -e "${COLOR}[*] Creating tools folder"
@@ -67,11 +55,10 @@ sudo mv go /usr/local
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-echo 'export GOROOT=/usr/local/go' >> ~/.zshrc
-echo 'export GOPATH=$HOME/go'   >> ~/.zshrc
-echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.zshrc
+echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
+echo 'export GOPATH=$HOME/go'   >> ~/.bashrc
+echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bashrc
 rm $GO_VERSION
-zsh
 
 # Nmap
 echo -e "${COLOR}[*] Installing Nmap"

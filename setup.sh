@@ -84,7 +84,7 @@ sudo pip3 install -r requirements.txt
 echo -e "${COLOR}[*] Installing Amass"
 cd ~/
 export GO111MODULE=on
-go get -v -u github.com/OWASP/Amass/v3/...
+go get -v github.com/OWASP/Amass/v3/...
 
 echo -e "${COLOR}[*] Installing massdns"
 cd ~/tools/

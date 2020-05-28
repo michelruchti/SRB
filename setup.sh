@@ -100,7 +100,7 @@ sudo apt install -y chromium-browser
 cd ~/tools
 wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/${AQUATONE_VERSION}
 unzip ${AQUATONE_VERSION}
-ln -sf ~/tools/aqutone /usr/local/bin/aqutone
+ln -sf ~/tools/aquatone /usr/local/bin/aquatone
 rm ${AQUATONE_VERSION} LICENSE.txt README.md
 
 # Install Dirsearch

@@ -97,7 +97,7 @@ ln -sf ~/tools/massdns/bin/massdns /usr/local/bin/massdns
 # Install Aquatone
 echo -e "${COLOR}[*] Installing Aquatone"
 sudo apt install -y chromium-browser
-cd ~/
+cd ~/tools
 wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/${AQUATONE_VERSION}
 unzip ${AQUATONE_VERSION}
 ln -sf ~/tools/aqutone /usr/local/bin/aqutone
